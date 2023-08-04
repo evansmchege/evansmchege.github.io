@@ -1,0 +1,147 @@
+/* (A) WHOLE PAGE */
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #e5e907f6;
+}
+.button {
+  padding: 10px;
+  border: 0;
+  font-weight: 700;
+  color: #fff;
+  background: #0ae20a;
+  cursor: pointer;
+}
+
+/* (B) PRODUCTS + CART */
+/* (B1) WRAPPER */
+#wrap { position: relative; }
+
+/* (B2) HEADER */
+#head {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 20px 10px;
+  font-size: 16px;
+  color: #fff;
+  background: #282828;
+  }
+#iDummy, #iCart {
+  margin: 0 10px;
+  cursor: pointer;
+}
+#cCart {
+  font-weight: 700;
+  padding: 5px;
+  margin-left: 5px;
+  background: #f00303;
+}
+
+/* (B3) PRODUCTS WRAPPER */
+#products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 20px; padding: 20px;
+}
+@media screen and (max-width:600px) {
+  #products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* (B4) PRODUCTS */
+.pCell {
+  padding: 10px;
+  background: #fff;
+}
+.pImg {
+  width: 100%;
+}
+.pName, .pprice { margin: 5px 0; }
+.pName { font-size: 1.3rem; }
+.pprice { font-size: 0.9rem; color: #686868; }
+.pAdd { width: 100%; }
+
+/* (B5) CART WRAPPER */
+#wCart {
+  display: none;
+  position: absolute;
+  top: 0; left: 0; z-index: 999;
+  width: 320px; padding: 15px;
+  height: 100%; min-height: 100vh;
+  background-image: url(img30.jpg) ;
+  border-right: 1px solid #0be428;
+  border-left: 1px solid #a7a7a7;
+  height: auto;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#wCart.show { display: block; }
+#wCartClose {
+  font-size: 20px;
+  background: #4ee712;
+}
+
+/* (B6) CART ITEMS */
+.cCell {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 15px;
+  border: 1px solid #e3e3e3;
+  background: #fff;
+}
+.cCell.empty { padding: 10px; }
+.cQty {
+  text-align: center;
+  width: 50px;
+  border: 0;
+  background: #0729eb;
+}
+.cInfo {
+  flex-grow: 1;
+  padding: 10px 5px;
+}
+.cName { font-weight: 700; }
+.cprice { font-size: 0.9rem; }
+
+/* (C) CHECKOUT */
+#checkout {
+  position: fixed;
+  top: 0; left: 0; z-index: 999;
+  width: 100vw; height: 100vh;
+  background-image: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#checkout.show { display: flex; }
+#checkout form {
+  position: relative;
+  width: 400px;
+  padding: 20px;
+  background-image: url(img30.jpg);
+  height: auto;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#checkout label, #checkout input {
+  display: block;
+  width: 100%;
+}
+#checkout label { padding: 10px 0; }
+#checkout input { padding: 10px; }
+#checkout input[type=submit] { margin-top: 20px; }
+#coClose {
+  position: absolute;
+  top: 0; right: 0;
+}
+.text-center{
+  color: #000;
+  align-items: normal;
+}
